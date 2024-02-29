@@ -1,0 +1,70 @@
+## Install
+
+    $ git clone https://github.com/Timoolz/fincra_assignment.git
+    $ cd fincra_assignment
+   
+## Configure app
+
+Open `fincra_assignment/.env` then edit it with your settings. You will need:
+
+- MONGODB_URI;
+  Mongo db connection string e.g mongodb://0.0.0.0:27017/DB_name
+
+- PORT;
+  Port for app to run on e.g 5050(any port of your choice)
+
+- JWT_KEY;
+  Key for signing Jwt access tokens e.g a2f9e52d88e1cffd67eb18a5cad0925a40bb8e40816b192ea138b708ea05b20589fbbdf1e47e26e18215becabef6727e543fb016cd6181f09ec6887088e2434c
+## Running the project
+
+Run the following commands
+
+    $ npm build
+    $ npm start
+
+## Running the Unit Tests
+
+Run the following commands
+
+    $ npm test
+
+## Project Structure
+
+```
+fincra-test
+    |--seeds\               # Seed Data
+    |--src\
+        |--bin
+            |--www
+                |--index.ts             # App entry point
+        |--config\              # App config
+        |--controllers\         # Route controllers (controller layer)
+        |--entities\            # Mongo Entities
+        |--interfaces\          # App Interfaces (types)
+        |--middlewares\         # Custom express middlewares
+        |--repositories\        # Repositories( data layer)
+        |--routes\              # routes
+        |--seed-config\         # seed init and config
+        |--services\            # service layer
+        |--utils\               # utils
+        |--validators\          # validators
+        |--app.ts               # Express app
+    |--test\                # testDirectory
+```
+
+## TEST CREDENTIALS
+
+The following credentials can be used to test. These credentials are from seeded data;
+
+- ADMIN
+  `email: 'admin@gmail.com'; password: 'hashPassword'`
+
+- AGENT
+  `email: 'agent1@gmail.com'; password: 'hashPassword'`
+
+- USER
+  `email: 'user@gmail.com'; password: 'hashPassword'`
+
+
+
+check out the rest api doc on docs.txt and also take the file support tickets backend.json and configure it as a collection on postman for testing

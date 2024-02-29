@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "name": "adminUser",
+            "email": "admin@gmail.com",
+            "userType": "ADMIN",
+            "password": "hashPassword"
+        },
+        {
+            "name": "agentUser1",
+            "email": "agent1@gmail.com",
+            "userType": "AGENT",
+            "password": "hashPassword"
+        },
+        {
+            "name": "agentUser2",
+            "email": "agent2@gmail.com",
+            "userType": "AGENT",
+            "password": "hashPassword"
+        },
+        {
+            "name": "agentUser3",
+            "email": "agent3@gmail.com",
+            "userType": "AGENT",
+            "password": "hashPassword"
+        },
+        {
+            "name": "user",
+            "email": "user@gmail.com",
+            "userType": "USER",
+            "password": "hashPassword"
+        }
+    ]
+}

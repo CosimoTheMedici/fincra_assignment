@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "e9a73ccd-a18e-42df-8687-415309fb2892",
+		"name": "support tickets backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12117013",
+		"_collection_link": "https://lunar-robot-24822.postman.co/workspace/billing-api~1cfd49b0-3940-4c1c-9451-ce405f138eef/collection/12117013-e9a73ccd-a18e-42df-8687-415309fb2892?action=share&source=collection_link&creator=12117013"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/health/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"health",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"hashPassword\"\n},",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SUPPORTHOST}}/auth/login/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"adminUser\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"hashPassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SUPPORTHOST}}/auth/signup/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"auth",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create a ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGE2YTQzOTU0Y2Y2MGJkYThmNjc2MyIsImVtYWlsIjoiYWdlbnQxQGZpbmNyYS5jb20iLCJyb2xlIjoiQUdFTlQiLCJpYXQiOjE3MDg4ODIwMTV9.p2D76ugQosX0HwyrmXjLiIBubHUS0bps9PwwEP6fyyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"kkkkk\",\n    \"description\": \"very big description\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ticket data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment on ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGE2YTQzOTU0Y2Y2MGJkYThmNjc2MyIsImVtYWlsIjoiYWdlbnQxQGZpbmNyYS5jb20iLCJyb2xlIjoiQUdFTlQiLCJpYXQiOjE3MDg4ODIwMTV9.p2D76ugQosX0HwyrmXjLiIBubHUS0bps9PwwEP6fyyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketId\": \"comms\",\n    \"content\": \"big comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/comment/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						"comment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ticket detail by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}//ticket/id/:id",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"",
+						"ticket",
+						"id",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process a ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/process/:id",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						"process",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "close a ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/close/:id",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						"close",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/all/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						"all",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recently closed tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SUPPORTHOST}}/ticket/recently-closed/",
+					"host": [
+						"{{SUPPORTHOST}}"
+					],
+					"path": [
+						"ticket",
+						"recently-closed",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
